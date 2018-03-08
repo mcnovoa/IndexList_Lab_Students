@@ -64,11 +64,10 @@ public class ArrayIndexList<E> implements IndexList<E> {
 		element[index] = null;
 		moveDataOnePositionTL(index + 1, size-1);
 		size--;
-		
-		//If true eliminate a space via changeCapacity method to the array
+
+		//If true eliminate a space via changeCapacity method of the array
 		if((element.length - size) > MAXEMPTYPOS)
 			changeCapacity(-CAPTOAR);
-
 
 		return etr;
 	}
@@ -145,12 +144,12 @@ public class ArrayIndexList<E> implements IndexList<E> {
 			//Assign null to values on the array that aren't necessary 
 			for (int i = this.size(); i< array.length; i++) 
 				array[i] = null;
-		
 
-		for (int k = 0; k < this.size(); k++) 
+
+		for (int k = 0; k < this.size(); k++) {
 			//Cast each element of element[] as T1 
 			array[k] = (T1) element[k];   
-		
+		}
 
 		return array; 
 	}
